@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eng. Fares Mansour | Tech & Education Advisor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <style>
@@ -30,6 +30,8 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+        body.rtl { font-family: 'Tajawal', sans-serif; }
+        body.rtl .logo-text, body.rtl .hero-name, body.rtl .section-title { font-family: 'Tajawal', sans-serif; }
 
         /* ── SCROLLBAR ── */
         ::-webkit-scrollbar { width: 6px; }
@@ -69,12 +71,19 @@
             display: none; background: none; border: none; cursor: pointer;
             color: var(--text); font-size: 1.4rem; padding: .5rem;
         }
-        .theme-btn {
+        .theme-btn, .lang-btn {
             background: rgba(59,130,246,.15); border: 1px solid rgba(59,130,246,.3);
-            color: var(--text); width: 38px; height: 38px; border-radius: 50%;
+            color: var(--text); height: 38px; border-radius: 50%;
             cursor: pointer; font-size: .9rem; transition: all .2s; margin-left: .5rem;
+            width: 38px;
         }
-        .theme-btn:hover { background: rgba(59,130,246,.3); }
+        .lang-btn {
+            width: auto; border-radius: 50px; padding: 0 .8rem;
+            font-weight: 700; font-size: .78rem; letter-spacing: .03em;
+            display: inline-flex; align-items: center; gap: .35rem;
+        }
+        .theme-btn:hover, .lang-btn:hover { background: rgba(59,130,246,.3); }
+        body.rtl .theme-btn, body.rtl .lang-btn { margin-left: 0; margin-right: .5rem; }
 
         /* ── HERO ── */
         #home {
@@ -104,6 +113,7 @@
             font-size: .8rem; font-weight: 600; letter-spacing: .05em;
             text-transform: uppercase; margin-bottom: 1.5rem;
         }
+        body.rtl .hero-tag { text-transform: none; }
         .hero-tag span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
         .hero-name {
@@ -121,6 +131,7 @@
             font-size: 1rem; color: var(--text2); max-width: 480px;
             margin-bottom: 2rem; line-height: 1.7;
         }
+        body.rtl .hero-desc { max-width: 520px; }
         .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn-primary {
             padding: .75rem 2rem; background: var(--skin); color: #fff;
@@ -174,6 +185,8 @@
         }
         .hero-badge.b1 { bottom: 40px; left: -20px; }
         .hero-badge.b2 { top: 40px; right: -20px; }
+        body.rtl .hero-badge.b1 { left: auto; right: -20px; }
+        body.rtl .hero-badge.b2 { right: auto; left: -20px; }
         .badge-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
         .badge-icon.blue { background: rgba(59,130,246,.2); color: var(--skin); }
         .badge-icon.green { background: rgba(34,197,94,.2); color: #22c55e; }
@@ -192,6 +205,7 @@
             font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
             margin-bottom: 1rem;
         }
+        body.rtl .section-tag { text-transform: none; }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800;
@@ -215,6 +229,7 @@
             font-size: .9rem;
         }
         .info-row strong { color: var(--accent); margin-right: .5rem; }
+        body.rtl .info-row strong { margin-right: 0; margin-left: .5rem; }
         .about-skills {}
         .skill-item { margin-bottom: 1.2rem; }
         .skill-header { display: flex; justify-content: space-between; margin-bottom: .4rem; font-size: .9rem; font-weight: 600; }
@@ -234,12 +249,14 @@
             position: relative; padding-left: 2rem; padding-bottom: 1.8rem;
             border-left: 2px solid rgba(59,130,246,.2);
         }
+        body.rtl .tl-item { padding-left: 0; padding-right: 2rem; border-left: none; border-right: 2px solid rgba(59,130,246,.2); }
         .tl-item:last-child { padding-bottom: 0; }
         .tl-dot {
             position: absolute; left: -7px; top: 4px;
             width: 12px; height: 12px; border-radius: 50%; background: var(--skin);
             box-shadow: 0 0 0 3px rgba(59,130,246,.2);
         }
+        body.rtl .tl-dot { left: auto; right: -7px; }
         .tl-date { font-size: .75rem; color: var(--accent); font-weight: 600; margin-bottom: .3rem; }
         .tl-title { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
         .tl-text { font-size: .85rem; color: var(--text2); line-height: 1.6; }
@@ -340,6 +357,7 @@
             color: var(--text2); text-decoration: none; font-weight: 500; transition: all .2s;
         }
         .mobile-nav a:hover { background: rgba(59,130,246,.1); color: var(--text); }
+        .mobile-lang-row { display: flex; gap: .6rem; padding: .6rem 1rem 0; margin-top: .4rem; border-top: 1px solid rgba(148,163,184,.12); padding-top: .8rem; }
 
         /* ── LIGHT MODE ── */
         body.light {
@@ -360,6 +378,99 @@
         }
         #back-top.show { opacity: 1; transform: translateY(0); }
         #back-top:hover { background: var(--skin-dark); }
+        body.rtl #back-top { right: auto; left: 2rem; }
+
+        /* ── AI ASSISTANT ── */
+        .ai-tabs { display: flex; justify-content: center; gap: .8rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+        .ai-tab-btn {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .7rem 1.4rem; border-radius: 50px; cursor: pointer;
+            background: var(--bg2); border: 1px solid rgba(148,163,184,.15);
+            color: var(--text2); font-weight: 600; font-size: .9rem; transition: all .2s;
+        }
+        .ai-tab-btn:hover { border-color: rgba(59,130,246,.4); color: var(--text); }
+        .ai-tab-btn.active { background: var(--skin); color: #fff; border-color: var(--skin); }
+        .ai-panel { display: none; background: var(--bg2); border: 1px solid rgba(148,163,184,.1); border-radius: 20px; padding: 1.8rem; max-width: 780px; margin: auto; }
+        .ai-panel.active { display: block; }
+        .chat-window { max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; padding: .5rem .2rem 1rem; }
+        .chat-msg { display: flex; gap: .7rem; align-items: flex-start; }
+        .chat-msg.user { flex-direction: row-reverse; }
+        body.rtl .chat-msg.user { flex-direction: row; }
+        body.rtl .chat-msg.bot { flex-direction: row-reverse; }
+        .chat-avatar {
+            width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: .85rem;
+            background: rgba(59,130,246,.15); color: var(--skin);
+        }
+        .chat-msg.user .chat-avatar { background: rgba(148,163,184,.15); color: var(--text2); }
+        .chat-bubble {
+            background: var(--bg3); padding: .7rem 1rem; border-radius: 14px;
+            font-size: .88rem; line-height: 1.6; max-width: 78%;
+        }
+        .chat-msg.bot .chat-bubble { border-top-left-radius: 4px; }
+        .chat-msg.user .chat-bubble { border-top-right-radius: 4px; background: rgba(59,130,246,.18); }
+        body.rtl .chat-msg.bot .chat-bubble { border-top-left-radius: 14px; border-top-right-radius: 4px; }
+        body.rtl .chat-msg.user .chat-bubble { border-top-right-radius: 14px; border-top-left-radius: 4px; }
+        .chat-bubble a { color: var(--accent); }
+        .chat-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+        .chip {
+            padding: .4rem .9rem; border-radius: 50px; font-size: .78rem; font-weight: 600;
+            background: rgba(59,130,246,.1); border: 1px solid rgba(59,130,246,.25);
+            color: var(--accent); cursor: pointer; transition: all .2s;
+        }
+        .chip:hover { background: rgba(59,130,246,.2); }
+        .chat-input-row { display: flex; gap: .6rem; }
+        .chat-input-row input {
+            flex: 1; padding: .75rem 1rem; border-radius: 50px;
+            border: 1px solid rgba(148,163,184,.2); background: var(--bg);
+            color: var(--text); font-size: .88rem; font-family: inherit;
+        }
+        .chat-input-row input:focus { outline: none; border-color: var(--skin); }
+        .match-textarea {
+            width: 100%; min-height: 130px; resize: vertical;
+            padding: 1rem; border-radius: 14px; border: 1px solid rgba(148,163,184,.2);
+            background: var(--bg); color: var(--text); font-family: inherit; font-size: .9rem; line-height: 1.6;
+        }
+        .match-textarea:focus { outline: none; border-color: var(--skin); }
+        .match-result { display: none; margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(148,163,184,.12); }
+        .match-result.show { display: block; }
+        .match-score-row { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.4rem; }
+        .match-score-circle {
+            width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.1rem; color: #fff;
+            background: conic-gradient(var(--skin) calc(var(--pct) * 1%), rgba(148,163,184,.15) 0);
+            position: relative;
+        }
+        .match-score-circle::before { content:''; position:absolute; inset:6px; border-radius:50%; background: var(--bg2); }
+        .match-score-circle { z-index: 0; }
+        .match-score-circle { text-shadow: 0 0 0 transparent; }
+        .match-score-circle span { position: relative; z-index: 1; }
+        .match-score-label { font-weight: 700; font-size: 1rem; }
+        .match-block { margin-bottom: 1.2rem; }
+        .match-block h4 { font-size: .85rem; font-weight: 700; color: var(--accent); margin-bottom: .6rem; display:flex; align-items:center; gap:.5rem; }
+        .match-block ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+        .match-block li { font-size: .87rem; color: var(--text2); padding-left: 1rem; position: relative; line-height: 1.5; }
+        .match-block li::before { content: '›'; position: absolute; left: 0; color: var(--skin); font-weight: 700; }
+        body.rtl .match-block li { padding-left: 0; padding-right: 1rem; }
+        body.rtl .match-block li::before { content: '‹'; left: auto; right: 0; }
+        .match-block li a { color: var(--accent); }
+        .match-block.gaps li::before { color: var(--gold); }
+        .match-cta { text-align: center; margin-top: 1.5rem; }
+
+        /* ── FLOATING AI BUBBLE ── */
+        #ai-bubble {
+            position: fixed; bottom: 2rem; left: 2rem; z-index: 900;
+            width: 52px; height: 52px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--skin), var(--accent));
+            color: #fff; border: none; cursor: pointer; font-size: 1.15rem;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(59,130,246,.45);
+            animation: floatPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes floatPulse { 0%,100%{ box-shadow: 0 6px 20px rgba(59,130,246,.45);} 50%{ box-shadow: 0 6px 28px rgba(59,130,246,.7);} }
+        #ai-bubble:hover { animation-play-state: paused; transform: scale(1.06); }
+        body.rtl #ai-bubble { left: auto; right: 2rem; }
 
         /* ── RESPONSIVE ── */
         @media(max-width:1024px) {
@@ -374,7 +485,7 @@
             .contact-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media(max-width:768px) {
-            .nav-links, .theme-btn { display: none; }
+            .nav-links, .theme-btn, .lang-btn.desktop-only { display: none; }
             .nav-toggle { display: block; }
             .portfolio-grid { grid-template-columns: 1fr; }
             .timeline-grid { grid-template-columns: 1fr; }
@@ -385,6 +496,9 @@
             .hero-img-ring, .hero-img-ring2 { display: none; }
             .hero-photo { width: 220px; height: 220px; }
             .section { padding: 4rem 1.2rem; }
+            #ai-bubble { left: 1.2rem; bottom: 1.2rem; width: 46px; height: 46px; }
+            body.rtl #ai-bubble { left: auto; right: 1.2rem; }
+            .chat-bubble { max-width: 88%; }
         }
     </style>
 </head>
@@ -395,14 +509,16 @@
     <div class="nav-inner">
         <a class="logo-text" href="#home">FM</a>
         <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="active" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#ai-assistant" data-i18n="nav_ai">AI Assistant</a></li>
+            <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+            <li><a href="#certificates" data-i18n="nav_certificates">Certificates</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         </ul>
         <div style="display:flex;align-items:center;gap:.5rem">
+            <button class="lang-btn desktop-only" id="langBtn" title="Switch language"><i class="fas fa-globe"></i> <span id="langBtnLabel">عربي</span></button>
             <button class="theme-btn" id="themeBtn" title="Toggle theme"><i class="fas fa-moon"></i></button>
             <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
         </div>
@@ -412,13 +528,17 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="#ai-assistant" data-i18n="nav_ai">AI Assistant</a></li>
+        <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+        <li><a href="#certificates" data-i18n="nav_certificates">Certificates</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
+    <div class="mobile-lang-row">
+        <button class="lang-btn" id="langBtnMobile" style="flex:1;justify-content:center"><i class="fas fa-globe"></i> <span id="langBtnLabelMobile">عربي</span></button>
+    </div>
 </div>
 
 <!-- HERO -->
@@ -427,18 +547,18 @@
     <div class="hero-grid"></div>
     <div class="hero-inner">
         <div class="hero-content">
-            <div class="hero-tag"><span></span> Available for opportunities</div>
-            <h1 class="hero-name">Hello, I'm<br><em>Eng. Fares Mansour</em></h1>
-            <p class="hero-profession">I'm a <span class="typing"></span></p>
-            <p class="hero-desc">Strong technical capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, AI, and data analysis.</p>
+            <div class="hero-tag"><span></span> <span data-i18n="hero_tag"></span></div>
+            <h1 class="hero-name" data-i18n-html="hero_name">Hello, I'm<br><em>Eng. Fares Mansour</em></h1>
+            <p class="hero-profession"><span data-i18n="hero_imA">I'm a</span> <span class="typing"></span></p>
+            <p class="hero-desc" data-i18n="hero_desc">Strong technical capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, AI, and data analysis.</p>
             <div class="hero-btns">
-                <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
-                <a href="https://drive.google.com/file/d/1Zqoa0dfJGoQ0dtKcdwrB-3ZDW4NXQLwe/view?usp=sharing" target="_blank" class="btn-outline"><i class="fas fa-download"></i> Download CV</a>
+                <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> <span data-i18n="btn_hireme">Hire Me</span></a>
+                <a href="https://drive.google.com/file/d/1Zqoa0dfJGoQ0dtKcdwrB-3ZDW4NXQLwe/view?usp=sharing" target="_blank" class="btn-outline"><i class="fas fa-download"></i> <span data-i18n="btn_downloadcv">Download CV</span></a>
             </div>
             <div class="hero-stats">
-                <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-item"><div class="stat-num">24+</div><div class="stat-label">Certificates</div></div>
-                <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Students Trained</div></div>
+                <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label" data-i18n="stat_experience">Years Experience</div></div>
+                <div class="stat-item"><div class="stat-num">24+</div><div class="stat-label" data-i18n="stat_certificates">Certificates</div></div>
+                <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label" data-i18n="stat_students">Students Trained</div></div>
             </div>
         </div>
         <div class="hero-img-wrap">
@@ -447,11 +567,11 @@
             <img class="hero-photo" src="hero.png" alt="Fares Mansour">
             <div class="hero-badge b1">
                 <div class="badge-icon green"><i class="fas fa-check"></i></div>
-                <div class="badge-text"><span>Available</span><span>Freelance</span></div>
+                <div class="badge-text"><span data-i18n="badge_available">Available</span><span data-i18n="badge_freelance">Freelance</span></div>
             </div>
             <div class="hero-badge b2">
                 <div class="badge-icon blue"><i class="fas fa-shield-alt"></i></div>
-                <div class="badge-text"><span>Cybersecurity</span><span>Expert</span></div>
+                <div class="badge-text"><span data-i18n="badge_cyber">Cybersecurity</span><span data-i18n="badge_expert">Expert</span></div>
             </div>
         </div>
     </div>
@@ -461,40 +581,40 @@
 <section id="about">
     <div class="section">
         <div class="section-header">
-            <div class="section-tag">Who I Am</div>
-            <h2 class="section-title">About Me</h2>
+            <div class="section-tag" data-i18n="about_tag">Who I Am</div>
+            <h2 class="section-title" data-i18n="about_title">About Me</h2>
             <div class="divider"></div>
         </div>
         <div class="about-grid">
             <div>
                 <div class="about-text">
-                    <h3>I'm <span>Eng. Fares Mohammed Mansour</span></h3>
-                    <p>Technical and Educational Advisor with strong capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, artificial intelligence, and data analysis.</p>
-                    <p>Trainer and organizer of courses and workshops in various fields, most notably cybersecurity, programming, and protection from cyber extortion.</p>
+                    <h3><span data-i18n="about_imprefix">I'm</span> <span data-i18n="about_fullname">Eng. Fares Mohammed Mansour</span></h3>
+                    <p data-i18n="about_p1">Technical and Educational Advisor with strong capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, artificial intelligence, and data analysis.</p>
+                    <p data-i18n="about_p2">Trainer and organizer of courses and workshops in various fields, most notably cybersecurity, programming, and protection from cyber extortion.</p>
                 </div>
                 <div class="info-grid">
-                    <div class="info-row"><strong>Birthday:</strong> 16 Dec 2001</div>
-                    <div class="info-row"><strong>Age:</strong> 24</div>
-                    <div class="info-row"><strong>Degree:</strong> BSc CIS</div>
-                    <div class="info-row"><strong>City:</strong> Gaza</div>
-                    <div class="info-row"><strong>Email:</strong> faresmansour.ps@gmail.com</div>
-                    <div class="info-row"><strong>Phone:</strong> +970 595438486</div>
-                    <div class="info-row" style="grid-column:1/-1"><strong>Social:</strong> <a href="http://www.linktr.ee/eng.faresmansour" target="_blank" style="color:var(--skin)">linktr.ee/eng.faresmansour</a></div>
-                    <div class="info-row"><strong>Freelance:</strong> Available</div>
+                    <div class="info-row"><strong data-i18n="info_birthday">Birthday:</strong> <span data-i18n="info_birthday_val">16 Dec 2001</span></div>
+                    <div class="info-row"><strong data-i18n="info_age">Age:</strong> <span data-i18n="info_age_val">24</span></div>
+                    <div class="info-row"><strong data-i18n="info_degree">Degree:</strong> <span data-i18n="info_degree_val">BSc CIS</span></div>
+                    <div class="info-row"><strong data-i18n="info_city">City:</strong> <span data-i18n="info_city_val">Gaza</span></div>
+                    <div class="info-row"><strong data-i18n="info_email">Email:</strong> faresmansour.ps@gmail.com</div>
+                    <div class="info-row"><strong data-i18n="info_phone">Phone:</strong> +970 595438486</div>
+                    <div class="info-row" style="grid-column:1/-1"><strong data-i18n="info_social">Social:</strong> <a href="http://www.linktr.ee/eng.faresmansour" target="_blank" style="color:var(--skin)">linktr.ee/eng.faresmansour</a></div>
+                    <div class="info-row"><strong data-i18n="info_freelance">Freelance:</strong> <span data-i18n="info_freelance_val">Available</span></div>
                 </div>
                 <div class="about-btns">
-                    <a href="https://drive.google.com/file/d/1Zqoa0dfJGoQ0dtKcdwrB-3ZDW4NXQLwe/view?usp=sharing" target="_blank" class="btn-primary"><i class="fas fa-file-pdf"></i> Download CV</a>
-                    <a href="#contact" class="btn-outline"><i class="fas fa-comments"></i> Hire Me</a>
+                    <a href="https://drive.google.com/file/d/1Zqoa0dfJGoQ0dtKcdwrB-3ZDW4NXQLwe/view?usp=sharing" target="_blank" class="btn-primary"><i class="fas fa-file-pdf"></i> <span data-i18n="btn_downloadcv">Download CV</span></a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-comments"></i> <span data-i18n="btn_hireme">Hire Me</span></a>
                 </div>
             </div>
             <div class="about-skills">
-                <h3 style="margin-bottom:1.5rem;font-size:1.1rem;font-weight:700">Technical Skills</h3>
-                <div class="skill-item"><div class="skill-header"><span>Professional Office Programs</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
-                <div class="skill-item"><div class="skill-header"><span>Data Analytics</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
-                <div class="skill-item"><div class="skill-header"><span>Problem Solving</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
-                <div class="skill-item"><div class="skill-header"><span>Software Development</span><span>77%</span></div><div class="skill-bar"><div class="skill-fill" data-w="77"></div></div></div>
-                <div class="skill-item"><div class="skill-header"><span>Web Development</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
-                <div class="skill-item"><div class="skill-header"><span>Security Risk Management</span><span>86%</span></div><div class="skill-bar"><div class="skill-fill" data-w="86"></div></div></div>
+                <h3 style="margin-bottom:1.5rem;font-size:1.1rem;font-weight:700" data-i18n="skills_heading">Technical Skills</h3>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_office">Professional Office Programs</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_data">Data Analytics</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_problem">Problem Solving</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_software">Software Development</span><span>77%</span></div><div class="skill-bar"><div class="skill-fill" data-w="77"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_web">Web Development</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
+                <div class="skill-item"><div class="skill-header"><span data-i18n="skill_security">Security Risk Management</span><span>86%</span></div><div class="skill-bar"><div class="skill-fill" data-w="86"></div></div></div>
             </div>
         </div>
 
@@ -502,57 +622,57 @@
         <div style="margin-top:4rem;">
             <div class="timeline-grid">
                 <div class="timeline-block">
-                    <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                    <h3><i class="fas fa-briefcase"></i> <span data-i18n="tl_work_heading">Work Experience</span></h3>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2025 – Present</div>
-                        <div class="tl-title">IT Engineer & Data Analyst</div>
-                        <div class="tl-text">Al-Awda Health and Community Association — IT & Communications Engineer and Data Analyst at Al-Awda Complex, Nuseirat.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_w1_date">2025 – Present</span></div>
+                        <div class="tl-title" data-i18n="tl_w1_title">IT Engineer & Data Analyst</div>
+                        <div class="tl-text" data-i18n="tl_w1_text">Al-Awda Health and Community Association — IT & Communications Engineer and Data Analyst at Al-Awda Complex, Nuseirat.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2023 – Present</div>
-                        <div class="tl-title">Humanitarian Programs Coordinator</div>
-                        <div class="tl-text">Managing humanitarian initiatives during the Gaza war, supporting orphans and displaced persons, and managing survivor data.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_w2_date">2023 – Present</span></div>
+                        <div class="tl-title" data-i18n="tl_w2_title">Humanitarian Programs Coordinator</div>
+                        <div class="tl-text" data-i18n="tl_w2_text">Managing humanitarian initiatives during the Gaza war, supporting orphans and displaced persons, and managing survivor data.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2023 – 2024</div>
-                        <div class="tl-title">Inventory Manager</div>
-                        <div class="tl-text">Managing inventories at Palberg Printing Company.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_w3_date">2023 – 2024</span></div>
+                        <div class="tl-title" data-i18n="tl_w3_title">Inventory Manager</div>
+                        <div class="tl-text" data-i18n="tl_w3_text">Managing inventories at Palberg Printing Company.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2019 – Present</div>
-                        <div class="tl-title">Web Developer</div>
-                        <div class="tl-text">Creating websites and educational files for universities, supervising student portfolios and websites.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_w4_date">2019 – Present</span></div>
+                        <div class="tl-title" data-i18n="tl_w4_title">Web Developer</div>
+                        <div class="tl-text" data-i18n="tl_w4_text">Creating websites and educational files for universities, supervising student portfolios and websites.</div>
                     </div>
                 </div>
                 <div class="timeline-block">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <h3><i class="fas fa-graduation-cap"></i> <span data-i18n="tl_edu_heading">Education</span></h3>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2025 – 2027</div>
-                        <div class="tl-title">Master of Digital Business Administration</div>
-                        <div class="tl-text">Al-Quds Open University.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_e1_date">2025 – 2027</span></div>
+                        <div class="tl-title" data-i18n="tl_e1_title">Master of Digital Business Administration</div>
+                        <div class="tl-text" data-i18n="tl_e1_text">Al-Quds Open University.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2025 – Present</div>
-                        <div class="tl-title">Master's in AI Engineering</div>
-                        <div class="tl-text">Study via the global Udemy platform.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_e2_date">2025 – Present</span></div>
+                        <div class="tl-title" data-i18n="tl_e2_title">Master's in AI Engineering</div>
+                        <div class="tl-text" data-i18n="tl_e2_text">Study via the global Udemy platform.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2019 – 2023</div>
-                        <div class="tl-title">Bachelor's in Computer Information Systems</div>
-                        <div class="tl-text">Web Technologies — Al-Quds Open University.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_e3_date">2019 – 2023</span></div>
+                        <div class="tl-title" data-i18n="tl_e3_title">Bachelor's in Computer Information Systems</div>
+                        <div class="tl-text" data-i18n="tl_e3_text">Web Technologies — Al-Quds Open University.</div>
                     </div>
                     <div class="tl-item">
                         <div class="tl-dot"></div>
-                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> 2021 – 2023</div>
-                        <div class="tl-title">Business and Project Management</div>
-                        <div class="tl-text">Google Inc. Certification Program.</div>
+                        <div class="tl-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="tl_e4_date">2021 – 2023</span></div>
+                        <div class="tl-title" data-i18n="tl_e4_title">Business and Project Management</div>
+                        <div class="tl-text" data-i18n="tl_e4_text">Google Inc. Certification Program.</div>
                     </div>
                 </div>
             </div>
@@ -564,42 +684,89 @@
 <section id="services" style="background:var(--bg2); padding: 6rem 0;">
     <div class="section" style="padding-top:0;padding-bottom:0">
         <div class="section-header">
-            <div class="section-tag">What I Do</div>
-            <h2 class="section-title">Services</h2>
-            <p class="section-subtitle">Professional services tailored to your needs</p>
+            <div class="section-tag" data-i18n="services_tag">What I Do</div>
+            <h2 class="section-title" data-i18n="services_title">Services</h2>
+            <p class="section-subtitle" data-i18n="services_subtitle">Professional services tailored to your needs</p>
             <div class="divider"></div>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h4>Security Risk Management</h4>
-                <p>Analyzing potential threats, providing effective recommendations to reduce impact and ensure business stability.</p>
+                <h4 data-i18n="svc1_title">Security Risk Management</h4>
+                <p data-i18n="svc1_text">Analyzing potential threats, providing effective recommendations to reduce impact and ensure business stability.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                <h4>Data Analytics</h4>
-                <p>Analyzing your data professionally, extracting accurate insights to support decisions and achieve goals effectively.</p>
+                <h4 data-i18n="svc2_title">Data Analytics</h4>
+                <p data-i18n="svc2_text">Analyzing your data professionally, extracting accurate insights to support decisions and achieve goals effectively.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                <h4>Web Design & Development</h4>
-                <p>Creating modern, attractive websites that meet your needs and showcase your business online.</p>
+                <h4 data-i18n="svc3_title">Web Design & Development</h4>
+                <p data-i18n="svc3_text">Creating modern, attractive websites that meet your needs and showcase your business online.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
-                <h4>Project Management</h4>
-                <p>Supervising task implementation and coordinating between teams to ensure projects are completed efficiently on time.</p>
+                <h4 data-i18n="svc4_title">Project Management</h4>
+                <p data-i18n="svc4_text">Supervising task implementation and coordinating between teams to ensure projects are completed efficiently on time.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                <h4>Problem Solving</h4>
-                <p>Analyzing problems and finding quick, effective solutions to various technical and organizational challenges.</p>
+                <h4 data-i18n="svc5_title">Problem Solving</h4>
+                <p data-i18n="svc5_text">Analyzing problems and finding quick, effective solutions to various technical and organizational challenges.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                <h4>Digital Marketing</h4>
-                <p>Marketing and promoting products online, reaching your target audience using the latest digital strategies.</p>
+                <h4 data-i18n="svc6_title">Digital Marketing</h4>
+                <p data-i18n="svc6_text">Marketing and promoting products online, reaching your target audience using the latest digital strategies.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI ASSISTANT -->
+<section id="ai-assistant">
+    <div class="section">
+        <div class="section-header">
+            <div class="section-tag" data-i18n="ai_tag">Talk To My Profile</div>
+            <h2 class="section-title" data-i18n="ai_title">AI Assistant</h2>
+            <p class="section-subtitle" data-i18n="ai_subtitle">Ask about my experience, or paste a job/project brief to see how well I match — answered instantly from my real CV data, no guessing.</p>
+            <div class="divider"></div>
+        </div>
+
+        <div class="ai-tabs">
+            <button class="ai-tab-btn active" data-tab="chat"><i class="fas fa-comment-dots"></i> <span data-i18n="tab_chat">Chat With My CV</span></button>
+            <button class="ai-tab-btn" data-tab="match"><i class="fas fa-bullseye"></i> <span data-i18n="tab_match">Job/Project Match Analyzer</span></button>
+        </div>
+
+        <!-- CHAT PANEL -->
+        <div class="ai-panel active" id="panel-chat">
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-msg bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble" id="chatWelcomeMsg">Hi, I'm Fares's CV Assistant 👋 Ask me about his experience, skills, projects, availability, or how to reach him.</div>
+                </div>
+            </div>
+            <div class="chat-chips" id="chatChips">
+                <button class="chip" data-qkey="q_experience" data-q="What is your experience?" data-i18n="chip_experience">Experience</button>
+                <button class="chip" data-qkey="q_skills" data-q="What are your technical skills?" data-i18n="chip_skills">Skills</button>
+                <button class="chip" data-qkey="q_projects" data-q="Show me your projects" data-i18n="chip_projects">Projects</button>
+                <button class="chip" data-qkey="q_cyber" data-q="Do you know cybersecurity?" data-i18n="chip_cyber">Cybersecurity</button>
+                <button class="chip" data-qkey="q_availability" data-q="Are you available for freelance work?" data-i18n="chip_availability">Availability</button>
+                <button class="chip" data-qkey="q_contact" data-q="How can I contact you?" data-i18n="chip_contact">Contact</button>
+            </div>
+            <form class="chat-input-row" id="chatForm">
+                <input type="text" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Type a question, e.g. 'Have you worked on data analysis projects?'" autocomplete="off">
+                <button type="submit" class="btn-primary" style="padding:.75rem 1.3rem"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+
+        <!-- MATCH PANEL -->
+        <div class="ai-panel" id="panel-match">
+            <p style="color:var(--text2);font-size:.9rem;margin-bottom:1rem" data-i18n="match_intro">Paste a job description, project brief, or list of required skills below. The analyzer scans it against Fares's real skills, roles, and portfolio to show a match score, matched skills, potential gaps, and relevant projects — grounded only in verified CV data.</p>
+            <textarea id="matchInput" class="match-textarea" data-i18n-placeholder="match_placeholder" placeholder="e.g. Looking for a developer with experience in data analysis, cybersecurity awareness training, and building websites for a healthcare organization..."></textarea>
+            <button id="matchBtn" class="btn-primary" style="margin-top:1rem"><i class="fas fa-search"></i> <span data-i18n="match_btn">Analyze Match</span></button>
+            <div id="matchResult" class="match-result"></div>
         </div>
     </div>
 </section>
@@ -608,35 +775,35 @@
 <section id="portfolio">
     <div class="section">
         <div class="section-header">
-            <div class="section-tag">My Work</div>
-            <h2 class="section-title">Portfolio</h2>
-            <p class="section-subtitle">Selected projects that demonstrate my expertise</p>
+            <div class="section-tag" data-i18n="portfolio_tag">My Work</div>
+            <h2 class="section-title" data-i18n="portfolio_title">Portfolio</h2>
+            <p class="section-subtitle" data-i18n="portfolio_subtitle">Selected projects that demonstrate my expertise</p>
             <div class="divider"></div>
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-card">
-                <div class="p-tag">Bachelor's Project</div>
-                <h3>Voice Control AI Application</h3>
-                <p>A voice control application for computers using artificial intelligence. Simply give a voice command, and the computer executes it automatically — completely hands-free control by voice alone.</p>
-                <a href="https://drive.google.com/file/d/1npNUhq2Z87t4mVx_Pjz5pxi3e-7truVX/view?usp=sharing" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                <div class="p-tag" data-i18n="p1_tag">Bachelor's Project</div>
+                <h3 data-i18n="p1_title">Voice Control AI Application</h3>
+                <p data-i18n="p1_text">A voice control application for computers using artificial intelligence. Simply give a voice command, and the computer executes it automatically — completely hands-free control by voice alone.</p>
+                <a href="https://drive.google.com/file/d/1npNUhq2Z87t4mVx_Pjz5pxi3e-7truVX/view?usp=sharing" target="_blank"><span data-i18n="view_project">View Project</span> <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="portfolio-card">
-                <div class="p-tag">E-Commerce</div>
-                <h3>Comprehensive Online Store</h3>
-                <p>A large-scale e-commerce platform in the footsteps of Amazon and Alibaba, featuring thousands of products, carefully designed for efficiency across the Gaza Strip and West Bank.</p>
-                <span style="color:var(--text2);font-size:.85rem;font-style:italic">Case Study Available</span>
+                <div class="p-tag" data-i18n="p2_tag">E-Commerce</div>
+                <h3 data-i18n="p2_title">Comprehensive Online Store</h3>
+                <p data-i18n="p2_text">A large-scale e-commerce platform in the footsteps of Amazon and Alibaba, featuring thousands of products, carefully designed for efficiency across the Gaza Strip and West Bank.</p>
+                <span style="color:var(--text2);font-size:.85rem;font-style:italic" data-i18n="case_study">Case Study Available</span>
             </div>
             <div class="portfolio-card">
-                <div class="p-tag">SysDiag Pro</div>
-                <h3>A tool for testing devices and systems</h3>
-                <p>SysDiag Pro — A free Arabic tool for checking and diagnosing devices that offers 16 diagnostic modules, live monitoring, interactive tests and professional reports, designed for developers and system administrators to get an accurate and fast picture of the status of any device without the need for paid software.</p>
-                <a href="https://www.mediafire.com/file/zdgxysemr2ue4qw/SysDiag_Pro.zip/file" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                <div class="p-tag" data-i18n="p3_tag">SysDiag Pro</div>
+                <h3 data-i18n="p3_title">A tool for testing devices and systems</h3>
+                <p data-i18n="p3_text">SysDiag Pro — A free Arabic tool for checking and diagnosing devices that offers 16 diagnostic modules, live monitoring, interactive tests and professional reports, designed for developers and system administrators to get an accurate and fast picture of the status of any device without the need for paid software.</p>
+                <a href="https://www.mediafire.com/file/zdgxysemr2ue4qw/SysDiag_Pro.zip/file" target="_blank"><span data-i18n="view_project">View Project</span> <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="portfolio-card">
-                <div class="p-tag">ES</div>
-                <h3>Energy Systems</h3>
-                <p>A system specializing in energy and artificial intelligence systems (under development, to be announced later).</p>
-                <span style="color:var(--text2);font-size:.85rem;font-style:italic">Soon</span>
+                <div class="p-tag" data-i18n="p4_tag">ES</div>
+                <h3 data-i18n="p4_title">Energy Systems</h3>
+                <p data-i18n="p4_text">A system specializing in energy and artificial intelligence systems (under development, to be announced later).</p>
+                <span style="color:var(--text2);font-size:.85rem;font-style:italic" data-i18n="soon">Soon</span>
             </div>
         </div>
     </div>
@@ -646,36 +813,36 @@
 <section id="certificates" style="background:var(--bg2); padding: 6rem 0;">
     <div class="section" style="padding-top:0;padding-bottom:0">
         <div class="section-header">
-            <div class="section-tag">Achievements</div>
-            <h2 class="section-title">Certificates</h2>
-            <p class="section-subtitle">Professional certifications and academic achievements</p>
+            <div class="section-tag" data-i18n="cert_tag">Achievements</div>
+            <h2 class="section-title" data-i18n="cert_title">Certificates</h2>
+            <p class="section-subtitle" data-i18n="cert_subtitle">Professional certifications and academic achievements</p>
             <div class="divider"></div>
         </div>
-        <div class="cert-grid">
-            <div class="cert-item"><i class="fas fa-certificate"></i> Business & Project Management</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Meta Verse</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Digital Marketing</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> HTML, CSS, JS, SQL, MySQL, Python</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> WordPress</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Project Management</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Successful Mentality</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> ICDL — International Computer Driving License</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Network Science</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Professional English — Level 4</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> File Design & Personal Website Programming</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Training of Trainers (TOT)</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> EF SET Certificate</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Red Crescent First Aid</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Security Risk Management</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Cyber Hacker Certified (CHC)</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Employee Cyber Security Awareness</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Gender-Based Violence First Support</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Data Science & Analytics</div>
-            <div class="cert-item"><i class="fas fa-certificate"></i> Diploma in Project Management</div>
-            <div class="cert-item"><i class="fas fa-graduation-cap"></i> BSc Computer Information Systems</div>
+        <div class="cert-grid" id="certGrid">
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_1">Business & Project Management</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_2">Meta Verse</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_3">Digital Marketing</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_4">HTML, CSS, JS, SQL, MySQL, Python</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_5">WordPress</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_6">Project Management</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_7">Successful Mentality</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_8">ICDL — International Computer Driving License</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_9">Network Science</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_10">Professional English — Level 4</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_11">File Design & Personal Website Programming</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_12">Training of Trainers (TOT)</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_13">EF SET Certificate</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_14">Red Crescent First Aid</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_15">Security Risk Management</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_16">Cyber Hacker Certified (CHC)</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_17">Employee Cyber Security Awareness</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_18">Gender-Based Violence First Support</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_19">Data Science & Analytics</span></div>
+            <div class="cert-item"><i class="fas fa-certificate"></i> <span data-i18n="cert_20">Diploma in Project Management</span></div>
+            <div class="cert-item"><i class="fas fa-graduation-cap"></i> <span data-i18n="cert_21">BSc Computer Information Systems</span></div>
         </div>
         <div class="cert-btn-wrap">
-            <a href="https://drive.google.com/drive/folders/1TTmiT0oGlCMpKeg2v0xDYyG3azWenMyv?usp=sharing" target="_blank" class="btn-primary"><i class="fas fa-folder-open"></i> View All Certificates</a>
+            <a href="https://drive.google.com/drive/folders/1TTmiT0oGlCMpKeg2v0xDYyG3azWenMyv?usp=sharing" target="_blank" class="btn-primary"><i class="fas fa-folder-open"></i> <span data-i18n="view_all_certs">View All Certificates</span></a>
         </div>
     </div>
 </section>
@@ -684,55 +851,267 @@
 <section id="contact">
     <div class="section">
         <div class="section-header">
-            <div class="section-tag">Get In Touch</div>
-            <h2 class="section-title">Contact Me</h2>
-            <p class="section-subtitle">I'm always open to discussing new opportunities</p>
+            <div class="section-tag" data-i18n="contact_tag">Get In Touch</div>
+            <h2 class="section-title" data-i18n="contact_title">Contact Me</h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">I'm always open to discussing new opportunities</p>
             <div class="divider"></div>
         </div>
         <div class="contact-grid">
             <div class="contact-card">
                 <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                <h4>Call / WhatsApp</h4>
+                <h4 data-i18n="contact_call">Call / WhatsApp</h4>
                 <a href="https://api.whatsapp.com/send/?phone=%2B970595438486" target="_blank">+970 595438486</a>
             </div>
             <div class="contact-card">
                 <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <h4>Location</h4>
-                <a href="https://www.google.com/maps/place/Gaza" target="_blank">Gaza, Palestine</a>
+                <h4 data-i18n="contact_location">Location</h4>
+                <a href="https://www.google.com/maps/place/Gaza" target="_blank" data-i18n="contact_location_val">Gaza, Palestine</a>
             </div>
             <div class="contact-card">
                 <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h4>Email</h4>
+                <h4 data-i18n="contact_email">Email</h4>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=faresmansour.ps@gmail.com">faresmansour.ps@gmail.com</a>
             </div>
             <div class="contact-card">
                 <div class="contact-icon"><i class="fas fa-link"></i></div>
-                <h4>Social Media</h4>
+                <h4 data-i18n="contact_social">Social Media</h4>
                 <a href="http://www.linktr.ee/eng.faresmansour" target="_blank">linktr.ee/eng.faresmansour</a>
             </div>
         </div>
         <div class="contact-cta">
-            <h3>Have a project in mind?</h3>
-            <p>I'm very responsive to messages. Let's work together!</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=faresmansour.ps@gmail.com" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Message</a>
+            <h3 data-i18n="contact_cta_h3">Have a project in mind?</h3>
+            <p data-i18n="contact_cta_p">I'm very responsive to messages. Let's work together!</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=faresmansour.ps@gmail.com" class="btn-primary"><i class="fas fa-paper-plane"></i> <span data-i18n="send_message">Send Message</span></a>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2025 <strong>Eng. Fares Mansour</strong> — Designed with ❤️ for excellence</p>
+    <p>© 2025 <strong>Eng. Fares Mansour</strong> — <span data-i18n="footer_text">Designed with ❤️ for excellence</span></p>
 </footer>
 
 <!-- BACK TO TOP -->
 <button id="back-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
+<!-- FLOATING AI BUBBLE -->
+<button id="ai-bubble" title="Ask my AI Assistant"><i class="fas fa-robot"></i></button>
+
 <script>
-// ── TYPED
-var typed = new Typed(".typing", {
-    strings: ["Web Developer", "Data Analyst", "Project Manager", "Cybersecurity Expert", "Tech & Education Advisor"],
-    typeSpeed: 80, backSpeed: 50, loop: true
-});
+/* ============================================================
+   I18N — translation dictionary for the whole page.
+   Every key here maps to a data-i18n / data-i18n-html /
+   data-i18n-placeholder attribute in the markup above.
+   ============================================================ */
+const I18N = {
+    en: {
+        nav_home: "Home", nav_about: "About", nav_services: "Services", nav_ai: "AI Assistant",
+        nav_portfolio: "Portfolio", nav_certificates: "Certificates", nav_contact: "Contact",
+        hero_tag: "Available for opportunities",
+        hero_name: `Hello, I'm<br><em>Eng. Fares Mansour</em>`,
+        hero_imA: "I'm a",
+        hero_desc: "Strong technical capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, AI, and data analysis.",
+        btn_hireme: "Hire Me", btn_downloadcv: "Download CV",
+        stat_experience: "Years Experience", stat_certificates: "Certificates", stat_students: "Students Trained",
+        badge_available: "Available", badge_freelance: "Freelance", badge_cyber: "Cybersecurity", badge_expert: "Expert",
+        about_tag: "Who I Am", about_title: "About Me",
+        about_imprefix: "I'm", about_fullname: "Eng. Fares Mohammed Mansour",
+        about_p1: "Technical and Educational Advisor with strong capabilities, entrepreneurial spirit, and experience in humanitarian work. Expert in technology, education technology, artificial intelligence, and data analysis.",
+        about_p2: "Trainer and organizer of courses and workshops in various fields, most notably cybersecurity, programming, and protection from cyber extortion.",
+        info_birthday: "Birthday:", info_birthday_val: "16 Dec 2001",
+        info_age: "Age:", info_age_val: "24",
+        info_degree: "Degree:", info_degree_val: "BSc CIS",
+        info_city: "City:", info_city_val: "Gaza",
+        info_email: "Email:", info_phone: "Phone:", info_social: "Social:",
+        info_freelance: "Freelance:", info_freelance_val: "Available",
+        skills_heading: "Technical Skills",
+        skill_office: "Professional Office Programs", skill_data: "Data Analytics",
+        skill_problem: "Problem Solving", skill_software: "Software Development",
+        skill_web: "Web Development", skill_security: "Security Risk Management",
+        tl_work_heading: "Work Experience", tl_edu_heading: "Education",
+        tl_w1_date: "2025 – Present", tl_w1_title: "IT Engineer & Data Analyst",
+        tl_w1_text: "Al-Awda Health and Community Association — IT & Communications Engineer and Data Analyst at Al-Awda Complex, Nuseirat.",
+        tl_w2_date: "2023 – Present", tl_w2_title: "Humanitarian Programs Coordinator",
+        tl_w2_text: "Managing humanitarian initiatives during the Gaza war, supporting orphans and displaced persons, and managing survivor data.",
+        tl_w3_date: "2023 – 2024", tl_w3_title: "Inventory Manager",
+        tl_w3_text: "Managing inventories at Palberg Printing Company.",
+        tl_w4_date: "2019 – Present", tl_w4_title: "Web Developer",
+        tl_w4_text: "Creating websites and educational files for universities, supervising student portfolios and websites.",
+        tl_e1_date: "2025 – 2027", tl_e1_title: "Master of Digital Business Administration", tl_e1_text: "Al-Quds Open University.",
+        tl_e2_date: "2025 – Present", tl_e2_title: "Master's in AI Engineering", tl_e2_text: "Study via the global Udemy platform.",
+        tl_e3_date: "2019 – 2023", tl_e3_title: "Bachelor's in Computer Information Systems", tl_e3_text: "Web Technologies — Al-Quds Open University.",
+        tl_e4_date: "2021 – 2023", tl_e4_title: "Business and Project Management", tl_e4_text: "Google Inc. Certification Program.",
+        services_tag: "What I Do", services_title: "Services", services_subtitle: "Professional services tailored to your needs",
+        svc1_title: "Security Risk Management", svc1_text: "Analyzing potential threats, providing effective recommendations to reduce impact and ensure business stability.",
+        svc2_title: "Data Analytics", svc2_text: "Analyzing your data professionally, extracting accurate insights to support decisions and achieve goals effectively.",
+        svc3_title: "Web Design & Development", svc3_text: "Creating modern, attractive websites that meet your needs and showcase your business online.",
+        svc4_title: "Project Management", svc4_text: "Supervising task implementation and coordinating between teams to ensure projects are completed efficiently on time.",
+        svc5_title: "Problem Solving", svc5_text: "Analyzing problems and finding quick, effective solutions to various technical and organizational challenges.",
+        svc6_title: "Digital Marketing", svc6_text: "Marketing and promoting products online, reaching your target audience using the latest digital strategies.",
+        ai_tag: "Talk To My Profile", ai_title: "AI Assistant",
+        ai_subtitle: "Ask about my experience, or paste a job/project brief to see how well I match — answered instantly from my real CV data, no guessing.",
+        tab_chat: "Chat With My CV", tab_match: "Job/Project Match Analyzer",
+        chat_welcome: "Hi, I'm Fares's CV Assistant 👋 Ask me about his experience, skills, projects, availability, or how to reach him.",
+        chip_experience: "Experience", chip_skills: "Skills", chip_projects: "Projects",
+        chip_cyber: "Cybersecurity", chip_availability: "Availability", chip_contact: "Contact",
+        chat_placeholder: "Type a question, e.g. 'Have you worked on data analysis projects?'",
+        match_intro: "Paste a job description, project brief, or list of required skills below. The analyzer scans it against Fares's real skills, roles, and portfolio to show a match score, matched skills, potential gaps, and relevant projects — grounded only in verified CV data.",
+        match_placeholder: "e.g. Looking for a developer with experience in data analysis, cybersecurity awareness training, and building websites for a healthcare organization...",
+        match_btn: "Analyze Match",
+        portfolio_tag: "My Work", portfolio_title: "Portfolio", portfolio_subtitle: "Selected projects that demonstrate my expertise",
+        p1_tag: "Bachelor's Project", p1_title: "Voice Control AI Application",
+        p1_text: "A voice control application for computers using artificial intelligence. Simply give a voice command, and the computer executes it automatically — completely hands-free control by voice alone.",
+        p2_tag: "E-Commerce", p2_title: "Comprehensive Online Store",
+        p2_text: "A large-scale e-commerce platform in the footsteps of Amazon and Alibaba, featuring thousands of products, carefully designed for efficiency across the Gaza Strip and West Bank.",
+        p3_tag: "SysDiag Pro", p3_title: "A tool for testing devices and systems",
+        p3_text: "SysDiag Pro — A free Arabic tool for checking and diagnosing devices that offers 16 diagnostic modules, live monitoring, interactive tests and professional reports, designed for developers and system administrators to get an accurate and fast picture of the status of any device without the need for paid software.",
+        p4_tag: "ES", p4_title: "Energy Systems",
+        p4_text: "A system specializing in energy and artificial intelligence systems (under development, to be announced later).",
+        view_project: "View Project", case_study: "Case Study Available", soon: "Soon", view_all_certs: "View All Certificates",
+        cert_tag: "Achievements", cert_title: "Certificates", cert_subtitle: "Professional certifications and academic achievements",
+        cert_1: "Business & Project Management", cert_2: "Meta Verse", cert_3: "Digital Marketing",
+        cert_4: "HTML, CSS, JS, SQL, MySQL, Python", cert_5: "WordPress", cert_6: "Project Management",
+        cert_7: "Successful Mentality", cert_8: "ICDL — International Computer Driving License", cert_9: "Network Science",
+        cert_10: "Professional English — Level 4", cert_11: "File Design & Personal Website Programming",
+        cert_12: "Training of Trainers (TOT)", cert_13: "EF SET Certificate", cert_14: "Red Crescent First Aid",
+        cert_15: "Security Risk Management", cert_16: "Cyber Hacker Certified (CHC)", cert_17: "Employee Cyber Security Awareness",
+        cert_18: "Gender-Based Violence First Support", cert_19: "Data Science & Analytics",
+        cert_20: "Diploma in Project Management", cert_21: "BSc Computer Information Systems",
+        contact_tag: "Get In Touch", contact_title: "Contact Me", contact_subtitle: "I'm always open to discussing new opportunities",
+        contact_call: "Call / WhatsApp", contact_location: "Location", contact_location_val: "Gaza, Palestine",
+        contact_email: "Email", contact_social: "Social Media",
+        contact_cta_h3: "Have a project in mind?", contact_cta_p: "I'm very responsive to messages. Let's work together!",
+        send_message: "Send Message",
+        footer_text: "Designed with ❤️ for excellence",
+        typed_strings: ["Web Developer", "Data Analyst", "Project Manager", "Cybersecurity Expert", "Tech & Education Advisor"]
+    },
+    ar: {
+        nav_home: "الرئيسية", nav_about: "من أنا", nav_services: "الخدمات", nav_ai: "المساعد الذكي",
+        nav_portfolio: "الأعمال", nav_certificates: "الشهادات", nav_contact: "تواصل",
+        hero_tag: "متاح لفرص عمل جديدة",
+        hero_name: `مرحبًا، أنا<br><em>المهندس فارس منصور</em>`,
+        hero_imA: "أنا",
+        hero_desc: "قدرات تقنية قوية، روح ريادية، وخبرة في العمل الإنساني. خبير في التكنولوجيا، تكنولوجيا التعليم، الذكاء الاصطناعي، وتحليل البيانات.",
+        btn_hireme: "وظّفني", btn_downloadcv: "تحميل السيرة الذاتية",
+        stat_experience: "سنوات خبرة", stat_certificates: "شهادة", stat_students: "طالب تم تدريبهم",
+        badge_available: "متاح", badge_freelance: "للعمل الحر", badge_cyber: "الأمن السيبراني", badge_expert: "خبير",
+        about_tag: "من أنا", about_title: "نبذة عني",
+        about_imprefix: "أنا", about_fullname: "المهندس فارس محمد منصور",
+        about_p1: "مستشار تقني وتعليمي يتمتع بقدرات قوية وروح ريادية وخبرة في العمل الإنساني. خبير في التكنولوجيا وتكنولوجيا التعليم والذكاء الاصطناعي وتحليل البيانات.",
+        about_p2: "مدرب ومنظم دورات وورش عمل في مجالات متعددة، أبرزها الأمن السيبراني والبرمجة والحماية من الابتزاز الإلكتروني.",
+        info_birthday: "تاريخ الميلاد:", info_birthday_val: "16 ديسمبر 2001",
+        info_age: "العمر:", info_age_val: "24",
+        info_degree: "الدرجة العلمية:", info_degree_val: "بكالوريوس نظم معلومات حاسوبية",
+        info_city: "المدينة:", info_city_val: "غزة",
+        info_email: "البريد الإلكتروني:", info_phone: "الهاتف:", info_social: "التواصل الاجتماعي:",
+        info_freelance: "العمل الحر:", info_freelance_val: "متاح",
+        skills_heading: "المهارات التقنية",
+        skill_office: "برامج الأوفيس الاحترافية", skill_data: "تحليل البيانات",
+        skill_problem: "حل المشكلات", skill_software: "تطوير البرمجيات",
+        skill_web: "تطوير المواقع", skill_security: "إدارة المخاطر الأمنية",
+        tl_work_heading: "الخبرة العملية", tl_edu_heading: "التعليم",
+        tl_w1_date: "2025 – حتى الآن", tl_w1_title: "مهندس تقنية معلومات ومحلل بيانات",
+        tl_w1_text: "جمعية العودة الصحية والمجتمعية — مهندس تقنية معلومات واتصالات ومحلل بيانات في مجمع العودة، النصيرات.",
+        tl_w2_date: "2023 – حتى الآن", tl_w2_title: "منسّق برامج إنسانية",
+        tl_w2_text: "إدارة المبادرات الإنسانية خلال حرب غزة، ودعم الأيتام والنازحين، وإدارة بيانات الناجين.",
+        tl_w3_date: "2023 – 2024", tl_w3_title: "مدير مخازن",
+        tl_w3_text: "إدارة المخزون في شركة بالبيرغ للطباعة.",
+        tl_w4_date: "2019 – حتى الآن", tl_w4_title: "مطوّر مواقع ويب",
+        tl_w4_text: "إنشاء مواقع إلكترونية وملفات تعليمية للجامعات، والإشراف على معارض أعمال ومواقع الطلاب.",
+        tl_e1_date: "2025 – 2027", tl_e1_title: "ماجستير إدارة الأعمال الرقمية", tl_e1_text: "جامعة القدس المفتوحة.",
+        tl_e2_date: "2025 – حتى الآن", tl_e2_title: "ماجستير هندسة الذكاء الاصطناعي", tl_e2_text: "دراسة عبر منصة Udemy العالمية.",
+        tl_e3_date: "2019 – 2023", tl_e3_title: "بكالوريوس نظم المعلومات الحاسوبية", tl_e3_text: "تقنيات الويب — جامعة القدس المفتوحة.",
+        tl_e4_date: "2021 – 2023", tl_e4_title: "إدارة الأعمال والمشاريع", tl_e4_text: "برنامج شهادات من شركة Google.",
+        services_tag: "ماذا أقدم", services_title: "الخدمات", services_subtitle: "خدمات احترافية مصممة خصيصًا لاحتياجاتك",
+        svc1_title: "إدارة المخاطر الأمنية", svc1_text: "تحليل التهديدات المحتملة، وتقديم توصيات فعّالة لتقليل التأثير وضمان استقرار الأعمال.",
+        svc2_title: "تحليل البيانات", svc2_text: "تحليل بياناتك باحترافية، واستخراج رؤى دقيقة لدعم القرارات وتحقيق الأهداف بفعالية.",
+        svc3_title: "تصميم وتطوير المواقع", svc3_text: "إنشاء مواقع إلكترونية حديثة وجذابة تلبي احتياجاتك وتُبرز أعمالك على الإنترنت.",
+        svc4_title: "إدارة المشاريع", svc4_text: "الإشراف على تنفيذ المهام والتنسيق بين الفرق لضمان إنجاز المشاريع بكفاءة وفي الوقت المحدد.",
+        svc5_title: "حل المشكلات", svc5_text: "تحليل المشكلات وإيجاد حلول سريعة وفعّالة لمختلف التحديات التقنية والتنظيمية.",
+        svc6_title: "التسويق الرقمي", svc6_text: "تسويق وترويج المنتجات عبر الإنترنت، والوصول إلى جمهورك المستهدف باستخدام أحدث الاستراتيجيات الرقمية.",
+        ai_tag: "تحدّث مع ملفي الشخصي", ai_title: "المساعد الذكي",
+        ai_subtitle: "اسأل عن خبرتي، أو الصق وصف وظيفة أو مشروع لترى مدى التطابق — إجابات فورية من بيانات سيرتي الذاتية الحقيقية، بلا تخمين.",
+        tab_chat: "تحدّث مع سيرتي الذاتية", tab_match: "محلل التطابق الوظيفي",
+        chat_welcome: "مرحبًا، أنا مساعد فارس الذكي 👋 اسألني عن خبرته أو مهاراته أو مشاريعه أو مدى توفره أو كيفية التواصل معه.",
+        chip_experience: "الخبرة", chip_skills: "المهارات", chip_projects: "المشاريع",
+        chip_cyber: "الأمن السيبراني", chip_availability: "التوفر", chip_contact: "التواصل",
+        chat_placeholder: "اكتب سؤالاً، مثال: 'هل عملت على مشاريع تحليل بيانات؟'",
+        match_intro: "الصق وصف وظيفة أو مشروع أو قائمة مهارات مطلوبة أدناه. يقوم المحلل بمسحها مقابل مهارات فارس وخبراته ومشاريعه الحقيقية لعرض نسبة تطابق، والمهارات المتطابقة، والفجوات المحتملة، والمشاريع ذات الصلة — استنادًا فقط إلى بيانات السيرة الذاتية الموثقة.",
+        match_placeholder: "مثال: نبحث عن مطوّر لديه خبرة في تحليل البيانات، والتوعية بالأمن السيبراني، وبناء مواقع لمؤسسة صحية...",
+        match_btn: "تحليل التطابق",
+        portfolio_tag: "أعمالي", portfolio_title: "معرض الأعمال", portfolio_subtitle: "مشاريع مختارة تُظهر خبرتي",
+        p1_tag: "مشروع التخرج", p1_title: "تطبيق تحكم صوتي بالذكاء الاصطناعي",
+        p1_text: "تطبيق للتحكم الصوتي بالحاسوب باستخدام الذكاء الاصطناعي. ما عليك سوى إعطاء أمر صوتي، ليقوم الحاسوب بتنفيذه تلقائيًا — تحكم كامل بدون استخدام اليدين، بالصوت فقط.",
+        p2_tag: "تجارة إلكترونية", p2_title: "متجر إلكتروني شامل",
+        p2_text: "منصة تجارة إلكترونية واسعة النطاق على غرار أمازون وعلي بابا، تضم آلاف المنتجات، مصممة بعناية لتخدم قطاع غزة والضفة الغربية بكفاءة.",
+        p3_tag: "SysDiag Pro", p3_title: "أداة لفحص الأجهزة والأنظمة",
+        p3_text: "SysDiag Pro — أداة عربية مجانية لفحص وتشخيص الأجهزة، توفر 16 وحدة تشخيصية، ومراقبة حية، واختبارات تفاعلية، وتقارير احترافية، مصممة للمطورين ومسؤولي الأنظمة للحصول على صورة دقيقة وسريعة عن حالة أي جهاز دون الحاجة لبرامج مدفوعة.",
+        p4_tag: "ES", p4_title: "أنظمة الطاقة",
+        p4_text: "نظام متخصص في أنظمة الطاقة والذكاء الاصطناعي (قيد التطوير، وسيُعلن عنه لاحقًا).",
+        view_project: "عرض المشروع", case_study: "دراسة الحالة متاحة", soon: "قريبًا", view_all_certs: "عرض جميع الشهادات",
+        cert_tag: "الإنجازات", cert_title: "الشهادات", cert_subtitle: "شهادات مهنية وإنجازات أكاديمية",
+        cert_1: "إدارة الأعمال والمشاريع", cert_2: "الميتافيرس", cert_3: "التسويق الرقمي",
+        cert_4: "HTML وCSS وJS وSQL وMySQL وPython", cert_5: "ووردبريس", cert_6: "إدارة المشاريع",
+        cert_7: "عقلية النجاح", cert_8: "ICDL — رخصة القيادة الدولية للحاسوب", cert_9: "علم الشبكات",
+        cert_10: "الإنجليزية الاحترافية — المستوى الرابع", cert_11: "تصميم الملفات وبرمجة المواقع الشخصية",
+        cert_12: "تدريب المدربين (TOT)", cert_13: "شهادة EF SET", cert_14: "الإسعافات الأولية — الهلال الأحمر",
+        cert_15: "إدارة المخاطر الأمنية", cert_16: "قرصنة أخلاقية معتمد (CHC)", cert_17: "التوعية بالأمن السيبراني للموظفين",
+        cert_18: "الدعم الأولي لضحايا العنف القائم على النوع الاجتماعي", cert_19: "علم البيانات والتحليل",
+        cert_20: "دبلوم إدارة المشاريع", cert_21: "بكالوريوس نظم المعلومات الحاسوبية",
+        contact_tag: "تواصل معي", contact_title: "تواصل معي", contact_subtitle: "أنا دائمًا منفتح لمناقشة فرص جديدة",
+        contact_call: "اتصال / واتساب", contact_location: "الموقع", contact_location_val: "غزة، فلسطين",
+        contact_email: "البريد الإلكتروني", contact_social: "التواصل الاجتماعي",
+        contact_cta_h3: "هل لديك مشروع في ذهنك؟", contact_cta_p: "أنا سريع الاستجابة للرسائل. لنعمل معًا!",
+        send_message: "إرسال رسالة",
+        footer_text: "صُمم بكل ❤️ سعيًا للتميز",
+        typed_strings: ["مطوّر مواقع", "محلل بيانات", "مدير مشاريع", "خبير أمن سيبراني", "مستشار تقني وتعليمي"]
+    }
+};
+
+let currentLang = "en";
+let typed = new Typed(".typing", { strings: I18N.en.typed_strings, typeSpeed: 80, backSpeed: 50, loop: true });
+
+function applyLang(lang) {
+    currentLang = lang;
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.body.classList.toggle("rtl", lang === "ar");
+    document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const key = el.getAttribute("data-i18n-html");
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+
+    document.getElementById("langBtnLabel").textContent = lang === "ar" ? "EN" : "عربي";
+    document.getElementById("langBtnLabelMobile").textContent = lang === "ar" ? "EN" : "عربي";
+
+    // Re-init typed with the right language strings
+    if (typed && typed.destroy) typed.destroy();
+    typed = new Typed(".typing", { strings: dict.typed_strings, typeSpeed: 80, backSpeed: 50, loop: true });
+
+    // Refresh chat welcome message + chip labels are handled by data-i18n already
+    const welcome = document.getElementById("chatWelcomeMsg");
+    if (welcome && welcome.dataset.userTouched !== "1") welcome.textContent = dict.chat_welcome;
+
+    // If a match result is already showing, re-render it in the new language
+    const resultBox = document.getElementById("matchResult");
+    if (resultBox.classList.contains("show") && resultBox.dataset.lastText) {
+        runMatchAnalysis(resultBox.dataset.lastText, false);
+    }
+}
+
+function toggleLang() { applyLang(currentLang === "en" ? "ar" : "en"); }
+document.getElementById("langBtn").addEventListener("click", toggleLang);
+document.getElementById("langBtnMobile").addEventListener("click", toggleLang);
 
 // ── NAVBAR active on scroll
 const sections = document.querySelectorAll("section[id]");
@@ -741,7 +1120,6 @@ window.addEventListener("scroll", () => {
     let cur = "";
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
     navLinks.forEach(l => { l.classList.remove("active"); if (l.getAttribute("href") === "#" + cur) l.classList.add("active"); });
-    // back to top
     document.getElementById("back-top").classList.toggle("show", window.scrollY > 400);
 });
 
@@ -783,7 +1161,293 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
     });
 });
+
+// ── AI BUBBLE -> scroll to assistant section
+document.getElementById("ai-bubble").addEventListener("click", () => {
+    document.getElementById("ai-assistant").scrollIntoView({ behavior: "smooth" });
+});
+
+/* ============================================================
+   CV KNOWLEDGE BASE — single source of truth for the assistant.
+   Update this object whenever the CV changes; the chatbot and
+   the match analyzer both read from it, so nothing is invented.
+   Each entry carries an English and Arabic version of its text
+   so both the chatbot and the match analyzer stay bilingual.
+   ============================================================ */
+const CV = {
+    name: { en: "Eng. Fares Mohammed Mansour", ar: "المهندس فارس محمد منصور" },
+    location: { en: "Gaza, Palestine", ar: "غزة، فلسطين" },
+    availability: { en: "Available for freelance and full-time opportunities", ar: "متاح للعمل الحر والدوام الكامل" },
+    contact: { phone: "+970 595438486", whatsapp: "https://api.whatsapp.com/send/?phone=%2B970595438486", email: "faresmansour.ps@gmail.com", linktree: "linktr.ee/eng.faresmansour" },
+    skills: [
+        { en: "Professional Office Programs", ar: "برامج الأوفيس الاحترافية", level: 90, keywords: ["office", "excel", "word", "powerpoint"] },
+        { en: "Data Analytics", ar: "تحليل البيانات", level: 85, keywords: ["data", "analytics", "analysis", "بيانات", "تحليل"] },
+        { en: "Problem Solving", ar: "حل المشكلات", level: 95, keywords: ["problem solving", "troubleshooting", "حل مشاكل", "حل المشكلات"] },
+        { en: "Software Development", ar: "تطوير البرمجيات", level: 77, keywords: ["software", "python", "programming", "developer", "برمجة"] },
+        { en: "Web Development", ar: "تطوير المواقع", level: 80, keywords: ["web", "website", "frontend", "backend", "موقع", "ويب"] },
+        { en: "Security Risk Management", ar: "إدارة المخاطر الأمنية", level: 86, keywords: ["security", "cyber", "risk", "أمن", "حماية", "سايبر"] }
+    ],
+    experience: [
+        { role: { en: "IT Engineer & Data Analyst", ar: "مهندس تقنية معلومات ومحلل بيانات" }, org: "Al-Awda Health and Community Association", period: { en: "2025 – Present", ar: "2025 – حتى الآن" }, text: { en: "IT & Communications Engineer and Data Analyst at Al-Awda Complex, Nuseirat.", ar: "مهندس تقنية معلومات واتصالات ومحلل بيانات في مجمع العودة، النصيرات." }, tags: ["health", "medical", "hospital", "data", "it", "clinic", "صحي", "مستشفى"] },
+        { role: { en: "Humanitarian Programs Coordinator", ar: "منسّق برامج إنسانية" }, org: "Independent / NGO work", period: { en: "2023 – Present", ar: "2023 – حتى الآن" }, text: { en: "Managing humanitarian initiatives during the Gaza war, supporting orphans and displaced persons, and managing survivor data.", ar: "إدارة المبادرات الإنسانية خلال حرب غزة، ودعم الأيتام والنازحين، وإدارة بيانات الناجين." }, tags: ["humanitarian", "ngo", "coordination", "data", "إنساني"] },
+        { role: { en: "Inventory Manager", ar: "مدير مخازن" }, org: "Palberg Printing Company", period: { en: "2023 – 2024", ar: "2023 – 2024" }, text: { en: "Managing inventories at Palberg Printing Company.", ar: "إدارة المخزون في شركة بالبيرغ للطباعة." }, tags: ["inventory", "logistics", "operations", "مخزون"] },
+        { role: { en: "Web Developer", ar: "مطوّر مواقع ويب" }, org: "Freelance / Universities", period: { en: "2019 – Present", ar: "2019 – حتى الآن" }, text: { en: "Creating websites and educational files for universities, supervising student portfolios and websites.", ar: "إنشاء مواقع إلكترونية وملفات تعليمية للجامعات، والإشراف على معارض أعمال ومواقع الطلاب." }, tags: ["web", "website", "education", "portfolio", "موقع", "تعليم"] }
+    ],
+    education: [
+        { title: { en: "Master of Digital Business Administration", ar: "ماجستير إدارة الأعمال الرقمية" }, org: "Al-Quds Open University", period: { en: "2025 – 2027", ar: "2025 – 2027" } },
+        { title: { en: "Master's in AI Engineering", ar: "ماجستير هندسة الذكاء الاصطناعي" }, org: "Udemy (global platform)", period: { en: "2025 – Present", ar: "2025 – حتى الآن" } },
+        { title: { en: "Bachelor's in Computer Information Systems (Web Technologies)", ar: "بكالوريوس نظم المعلومات الحاسوبية (تقنيات الويب)" }, org: "Al-Quds Open University", period: { en: "2019 – 2023", ar: "2019 – 2023" } },
+        { title: { en: "Business and Project Management Certification", ar: "شهادة إدارة الأعمال والمشاريع" }, org: "Google Inc.", period: { en: "2021 – 2023", ar: "2021 – 2023" } }
+    ],
+    projects: [
+        { name: { en: "Voice Control AI Application", ar: "تطبيق تحكم صوتي بالذكاء الاصطناعي" }, tag: { en: "Bachelor's Project", ar: "مشروع التخرج" }, text: { en: "A voice-controlled desktop application using AI — hands-free control of the computer through spoken commands.", ar: "تطبيق للتحكم الصوتي بالحاسوب باستخدام الذكاء الاصطناعي — تحكم كامل بدون استخدام اليدين." }, link: "https://drive.google.com/file/d/1npNUhq2Z87t4mVx_Pjz5pxi3e-7truVX/view?usp=sharing", tags: ["ai", "voice", "artificial intelligence", "assistant", "ذكاء اصطناعي", "صوت"] },
+        { name: { en: "Comprehensive Online Store (E-Commerce)", ar: "متجر إلكتروني شامل" }, tag: { en: "E-Commerce", ar: "تجارة إلكترونية" }, text: { en: "A large-scale e-commerce platform with thousands of products, designed for efficiency across Gaza and the West Bank.", ar: "منصة تجارة إلكترونية واسعة النطاق تضم آلاف المنتجات، مصممة لتخدم غزة والضفة الغربية بكفاءة." }, link: null, tags: ["ecommerce", "online store", "web", "متجر", "تجارة"] },
+        { name: { en: "SysDiag Pro", ar: "SysDiag Pro" }, tag: { en: "Diagnostics Tool", ar: "أداة تشخيص" }, text: { en: "A free Arabic device-diagnostics tool with 16 diagnostic modules, live monitoring, interactive tests and professional reports.", ar: "أداة عربية مجانية لتشخيص الأجهزة تضم 16 وحدة تشخيصية ومراقبة حية واختبارات تفاعلية وتقارير احترافية." }, link: "https://www.mediafire.com/file/zdgxysemr2ue4qw/SysDiag_Pro.zip/file", tags: ["diagnostics", "systems", "software", "tool", "أنظمة", "تشخيص"] },
+        { name: { en: "Energy Systems (ES)", ar: "أنظمة الطاقة" }, tag: { en: "In Development", ar: "قيد التطوير" }, text: { en: "A system specializing in energy and artificial intelligence systems — under development.", ar: "نظام متخصص في أنظمة الطاقة والذكاء الاصطناعي — قيد التطوير." }, link: null, tags: ["energy", "ai", "systems", "طاقة"] }
+    ],
+    certificates: [
+        { en: "Business & Project Management", ar: "إدارة الأعمال والمشاريع" }, { en: "Meta Verse", ar: "الميتافيرس" },
+        { en: "Digital Marketing", ar: "التسويق الرقمي" }, { en: "HTML, CSS, JS, SQL, MySQL, Python", ar: "HTML وCSS وJS وSQL وMySQL وPython" },
+        { en: "WordPress", ar: "ووردبريس" }, { en: "Project Management", ar: "إدارة المشاريع" },
+        { en: "Successful Mentality", ar: "عقلية النجاح" }, { en: "ICDL", ar: "ICDL" },
+        { en: "Network Science", ar: "علم الشبكات" }, { en: "Professional English — Level 4", ar: "الإنجليزية الاحترافية — المستوى الرابع" },
+        { en: "File Design & Personal Website Programming", ar: "تصميم الملفات وبرمجة المواقع الشخصية" },
+        { en: "Training of Trainers (TOT)", ar: "تدريب المدربين (TOT)" }, { en: "EF SET Certificate", ar: "شهادة EF SET" },
+        { en: "Red Crescent First Aid", ar: "الإسعافات الأولية — الهلال الأحمر" }, { en: "Security Risk Management", ar: "إدارة المخاطر الأمنية" },
+        { en: "Cyber Hacker Certified (CHC)", ar: "قرصنة أخلاقية معتمد (CHC)" }, { en: "Employee Cyber Security Awareness", ar: "التوعية بالأمن السيبراني للموظفين" },
+        { en: "Gender-Based Violence First Support", ar: "الدعم الأولي لضحايا العنف القائم على النوع الاجتماعي" },
+        { en: "Data Science & Analytics", ar: "علم البيانات والتحليل" }, { en: "Diploma in Project Management", ar: "دبلوم إدارة المشاريع" },
+        { en: "BSc Computer Information Systems", ar: "بكالوريوس نظم المعلومات الحاسوبية" }
+    ],
+    services: [
+        { en: "Security Risk Management", ar: "إدارة المخاطر الأمنية" }, { en: "Data Analytics", ar: "تحليل البيانات" },
+        { en: "Web Design & Development", ar: "تصميم وتطوير المواقع" }, { en: "Project Management", ar: "إدارة المشاريع" },
+        { en: "Problem Solving", ar: "حل المشكلات" }, { en: "Digital Marketing", ar: "التسويق الرقمي" }
+    ]
+};
+
+/* Common requirement categories NOT covered by the CV — used only to
+   surface honest "potential gaps" in the match analyzer. Each entry
+   is a keyword set describing a skill area outside the CV data. */
+const GAP_CATEGORIES = [
+    { en: "Mobile app development (iOS/Android)", ar: "تطوير تطبيقات الجوال (iOS/Android)", keywords: ["mobile app", "ios", "android", "swift", "kotlin", "flutter", "react native", "تطبيق جوال", "تطبيقات الجوال"] },
+    { en: "UI/UX design", ar: "تصميم واجهات وتجربة المستخدم (UI/UX)", keywords: ["ui/ux", "ux design", "ui design", "figma", "adobe xd", "تصميم واجهات", "تجربة المستخدم"] },
+    { en: "Cloud infrastructure (AWS/Azure/GCP)", ar: "البنية السحابية (AWS/Azure/GCP)", keywords: ["aws", "azure", "gcp", "cloud infrastructure", "devops", "kubernetes", "docker", "سحابة", "حوسبة سحابية"] },
+    { en: "Machine learning model development", ar: "تطوير نماذج تعلّم آلي", keywords: ["tensorflow", "pytorch", "machine learning model", "deep learning", "نماذج تعلم آلي", "تعلم عميق"] },
+    { en: "Graphic design / branding", ar: "التصميم الجرافيكي / الهوية البصرية", keywords: ["graphic design", "branding", "logo design", "illustrator", "تصميم جرافيك", "هوية بصرية"] },
+    { en: "Video production / editing", ar: "إنتاج ومونتاج الفيديو", keywords: ["video editing", "video production", "premiere pro", "after effects", "مونتاج", "إنتاج فيديو"] },
+    { en: "Accounting / financial management", ar: "المحاسبة / الإدارة المالية", keywords: ["accounting", "bookkeeping", "financial modeling", "محاسبة", "إدارة مالية"] },
+    { en: "Legal / compliance work", ar: "الأعمال القانونية / الامتثال", keywords: ["legal counsel", "compliance officer", "قانوني", "امتثال"] }
+];
+
+/* ── TAB SWITCHING ── */
+document.querySelectorAll(".ai-tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".ai-tab-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".ai-panel").forEach(p => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
+    });
+});
+
+/* ============================================================
+   CHATBOT — keyword-matched, grounded strictly in the CV object
+   above. It never invents projects, employers, or skills that
+   are not present in the data. Answers follow the active language.
+   ============================================================ */
+function addChatMsg(text, who) {
+    const win = document.getElementById("chatWindow");
+    const row = document.createElement("div");
+    row.className = "chat-msg " + who;
+    row.innerHTML = `<div class="chat-avatar"><i class="fas fa-${who === 'bot' ? 'robot' : 'user'}"></i></div><div class="chat-bubble">${text}</div>`;
+    win.appendChild(row);
+    win.scrollTop = win.scrollHeight;
+}
+
+function answerQuery(raw) {
+    const q = raw.toLowerCase();
+    const L = currentLang;
+    const has = (...words) => words.some(w => q.includes(w));
+    const t = (obj) => obj[L];
+
+    if (has("hi", "hello", "hey", "مرحبا", "اهلا", "السلام")) {
+        return L === "ar"
+            ? `مرحبًا! يمكنني إخبارك عن خبرة ${t(CV.name)} ومهاراته وشهاداته ومشاريعه ومدى توفره. ماذا تريد أن تعرف؟`
+            : `Hello! I can tell you about ${t(CV.name)}'s experience, skills, certificates, projects, or availability. What would you like to know?`;
+    }
+    if (has("available", "hire", "freelance", "full-time", "job offer", "متوفر", "توظيف", "عمل حر")) {
+        return L === "ar"
+            ? `${t(CV.availability)}. مقيم في ${t(CV.location)}. يمكنك التواصل مباشرة عبر <a href="${CV.contact.whatsapp}" target="_blank">واتساب</a> أو <a href="mailto:${CV.contact.email}">البريد الإلكتروني</a>.`
+            : `${t(CV.availability)}. Based in ${t(CV.location)}. You can reach out directly via <a href="${CV.contact.whatsapp}" target="_blank">WhatsApp</a> or <a href="mailto:${CV.contact.email}">email</a>.`;
+    }
+    if (has("contact", "email", "phone", "whatsapp", "reach", "تواصل", "ايميل", "هاتف")) {
+        return L === "ar"
+            ? `يمكنك التواصل مع فارس عبر <a href="${CV.contact.whatsapp}" target="_blank">واتساب</a> (${CV.contact.phone})، أو <a href="mailto:${CV.contact.email}">البريد الإلكتروني</a>، أو عبر <a href="http://www.${CV.contact.linktree}" target="_blank">${CV.contact.linktree}</a>.`
+            : `You can reach Fares by <a href="${CV.contact.whatsapp}" target="_blank">WhatsApp</a> (${CV.contact.phone}), <a href="mailto:${CV.contact.email}">email</a>, or on <a href="http://www.${CV.contact.linktree}" target="_blank">${CV.contact.linktree}</a>.`;
+    }
+    if (has("cyber", "security", "hack", "أمن", "حماية", "سايبر")) {
+        const cert = CV.certificates.filter(c => /cyber|security/i.test(c.en)).map(c => t(c));
+        return L === "ar"
+            ? `نعم — إدارة المخاطر الأمنية من أقوى مهاراته (86%). الشهادات ذات الصلة: ${cert.join("، ")}. كما يدرّب آخرين على الحماية من الابتزاز الإلكتروني.`
+            : `Yes — Security Risk Management is one of his strongest skills (86%). Relevant certificates: ${cert.join(", ")}. He also trains others on protection from cyber extortion.`;
+    }
+    if (has("health", "hospital", "medical", "clinic", "صحي", "مستشفى")) {
+        const exp = CV.experience.find(e => e.tags.includes("health"));
+        return L === "ar"
+            ? `نعم — يعمل حاليًا بصفة ${t(exp.role)} لدى ${exp.org} (${t(exp.period)}): ${t(exp.text)} ويسعده مناقشة بناء أنظمة مشابهة لمؤسسة صحية.`
+            : `Yes — he currently works as ${t(exp.role)} at ${exp.org} (${t(exp.period)}): ${t(exp.text)} He'd be glad to discuss building similar systems for a healthcare organization.`;
+    }
+    if (has("data", "analyst", "analytics", "بيانات", "تحليل")) {
+        return L === "ar"
+            ? `تحليل البيانات مصنّف بنسبة 85% ضمن مهاراته، مدعومًا بشهادة علم البيانات والتحليل، وعمل فعلي كمهندس تقنية معلومات ومحلل بيانات لدى جمعية العودة الصحية، إضافة إلى إدارة بيانات الناجين في البرامج الإنسانية.`
+            : `Data Analytics is rated 85% among his skills, backed by a Data Science & Analytics certificate and hands-on work as IT Engineer & Data Analyst at Al-Awda Health and Community Association, plus survivor-data management in humanitarian programs.`;
+    }
+    if (has("python", "programming", "developer", "software", "برمجة", "بايثون")) {
+        return L === "ar"
+            ? `تطوير البرمجيات مصنّف بنسبة 77%. يحمل شهادة تغطي HTML وCSS وJS وSQL وMySQL وPython، وأنجز مشاريع فعلية مثل SysDiag Pro وتطبيق التحكم الصوتي بالذكاء الاصطناعي.`
+            : `Software Development is rated 77%. He holds a certificate covering HTML, CSS, JS, SQL, MySQL and Python, and has shipped real projects like SysDiag Pro and the Voice Control AI Application.`;
+    }
+    if (has("web", "website", "wordpress", "frontend", "موقع", "ويب")) {
+        return L === "ar"
+            ? `تطوير المواقع مصنّف بنسبة 80%. يبني مواقع إلكترونية منذ عام 2019 — مواقع جامعية، ومعارض أعمال طلابية، ومتجر إلكتروني كبير — ويحمل شهادة ووردبريس.`
+            : `Web Development is rated 80%. He's been building websites since 2019 — university sites, student portfolios, and a large e-commerce platform — and holds a WordPress certificate.`;
+    }
+    if (has("ai", "artificial intelligence", "machine learning", "ذكاء اصطناعي")) {
+        return L === "ar"
+            ? `يدرس حاليًا ماجستير هندسة الذكاء الاصطناعي، وقد بنى تطبيق التحكم الصوتي بالذكاء الاصطناعي (مشروع تخرجه) — نظام تحكم صوتي كامل بدون استخدام اليدين.`
+            : `He's currently pursuing a Master's in AI Engineering, and built the Voice Control AI Application (his Bachelor's project) — a hands-free, voice-driven desktop control system.`;
+    }
+    if (has("project", "portfolio", "مشاريع", "مشروع")) {
+        return L === "ar"
+            ? `أبرز المشاريع: ${CV.projects.map(p => `<b>${t(p.name)}</b> (${t(p.tag)})`).join("، ")}. افتح قسم معرض الأعمال أعلاه للتفاصيل والروابط.`
+            : `Key projects: ${CV.projects.map(p => `<b>${t(p.name)}</b> (${t(p.tag)})`).join(", ")}. Open the Portfolio section above for details and links.`;
+    }
+    if (has("skill", "skills", "مهارات", "مهارة")) {
+        const sorted = [...CV.skills].sort((a,b)=>b.level-a.level).map(s => `${t(s)} (${s.level}%)`).join(L === "ar" ? "، " : ", ");
+        return L === "ar" ? `أبرز المهارات: ${sorted}.` : `Top skills: ${sorted}.`;
+    }
+    if (has("experience", "work", "career", "خبرة", "عمل سابق")) {
+        return (L === "ar" ? "المسار المهني:<br>" : "Experience timeline:<br>") +
+            CV.experience.map(e => `• <b>${t(e.role)}</b> — ${e.org} (${t(e.period)})`).join("<br>");
+    }
+    if (has("education", "degree", "study", "university", "تعليم", "جامعة", "دراسة")) {
+        return (L === "ar" ? "التعليم:<br>" : "Education:<br>") +
+            CV.education.map(e => `• <b>${t(e.title)}</b> — ${e.org} (${t(e.period)})`).join("<br>");
+    }
+    if (has("certificate", "certification", "شهادة", "شهادات")) {
+        const list = CV.certificates.slice(0, 6).map(c => t(c)).join(L === "ar" ? "، " : ", ");
+        return L === "ar"
+            ? `يحمل أكثر من ${CV.certificates.length} شهادة، منها: ${list}، والمزيد — راجع قسم الشهادات للقائمة الكاملة.`
+            : `He holds ${CV.certificates.length}+ certificates, including: ${list}, and more — see the Certificates section for the full list.`;
+    }
+    if (has("service", "خدمات", "خدمة")) {
+        const list = CV.services.map(s => t(s)).join(L === "ar" ? "، " : ", ");
+        return L === "ar" ? `الخدمات المقدمة: ${list}.` : `Services offered: ${list}.`;
+    }
+    return L === "ar"
+        ? `لم أجد هذا التفصيل تحديدًا في بيانات السيرة الذاتية — أجيب فقط من معلومات موثقة، ولا أخمّن. جرّب السؤال عن الخبرة أو المهارات أو المشاريع أو الشهادات أو التوفر أو التواصل، أو تواصل مع فارس مباشرة عبر <a href="mailto:${CV.contact.email}">${CV.contact.email}</a>.`
+        : `I couldn't find that specific detail in the CV data — I only answer from verified information, I don't guess. Try asking about experience, skills, projects, certificates, availability, or contact, or reach Fares directly at <a href="mailto:${CV.contact.email}">${CV.contact.email}</a>.`;
+}
+
+document.getElementById("chatForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const input = document.getElementById("chatInput");
+    const val = input.value.trim();
+    if (!val) return;
+    addChatMsg(val, "user");
+    input.value = "";
+    setTimeout(() => addChatMsg(answerQuery(val), "bot"), 350);
+});
+document.querySelectorAll(".chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+        const displayLabel = chip.textContent.trim();
+        addChatMsg(displayLabel, "user");
+        setTimeout(() => addChatMsg(answerQuery(chip.dataset.q), "bot"), 350);
+    });
+});
+// Mark welcome message so language switches don't clobber a live chat
+document.getElementById("chatInput").addEventListener("focus", () => {
+    document.getElementById("chatWelcomeMsg").dataset.userTouched = "0";
+});
+
+/* ============================================================
+   MATCH ANALYZER — scores a pasted job/project brief against the
+   CV object's skills, experience, and project tags, and flags
+   honest potential gaps against common outside-CV requirement
+   categories. Fully keyword-based and transparent: no external
+   calls, no fabricated claims, everything traces back to a real
+   CV entry (or is clearly labeled as a gap).
+   ============================================================ */
+function runMatchAnalysis(text, storeInput) {
+    const L = currentLang;
+    const t = (obj) => obj[L];
+    const resultBox = document.getElementById("matchResult");
+    if (storeInput) resultBox.dataset.lastText = text;
+
+    if (!text) {
+        resultBox.innerHTML = `<p style="color:var(--text2)">${L === "ar" ? "الصق وصف وظيفة أو مشروع أعلاه أولاً." : "Paste a job description or project brief above first."}</p>`;
+        resultBox.classList.add("show");
+        return;
+    }
+
+    const matchedSkills = CV.skills.filter(s => s.keywords.some(k => text.includes(k)));
+    const matchedExp = CV.experience.filter(e => e.tags.some(k => text.includes(k)));
+    const matchedProjects = CV.projects.filter(p => p.tags.some(k => text.includes(k)));
+    const gaps = GAP_CATEGORIES.filter(g => g.keywords.some(k => text.includes(k)));
+
+    const totalCategories = CV.skills.length + CV.experience.length + CV.projects.length;
+    const matchedCategories = matchedSkills.length + matchedExp.length + matchedProjects.length;
+    let score = totalCategories ? Math.round((matchedCategories / totalCategories) * 100) : 0;
+    score = Math.min(score * 3, matchedCategories > 0 ? Math.max(score * 3, 35) : 0);
+    score = Math.min(score, 96);
+    if (gaps.length && matchedCategories > 0) score = Math.max(score - gaps.length * 6, 15);
+
+    const scoreLabel = score >= 60
+        ? (L === "ar" ? "تطابق قوي" : "Strong match")
+        : score >= 30
+            ? (L === "ar" ? "تطابق جزئي" : "Partial match")
+            : (L === "ar" ? "تطابق مباشر محدود" : "Limited direct match");
+
+    let html = `<div class="match-score-row">
+        <div class="match-score-circle" style="--pct:${score}"><span>${score}%</span></div>
+        <div>
+            <div class="match-score-label">${scoreLabel}</div>
+            <div style="color:var(--text2);font-size:.85rem">${L === "ar" ? "استنادًا إلى مهارات وخبرات ومشاريع موثقة في السيرة الذاتية — وليس تخمينًا." : "Based on verified skills, roles and projects in the CV — not a guess."}</div>
+        </div>
+    </div>`;
+
+    if (matchedSkills.length) {
+        html += `<div class="match-block"><h4><i class="fas fa-bolt"></i> ${L === "ar" ? "المهارات المتطابقة" : "Matching skills"}</h4><ul>` +
+            matchedSkills.map(s => `<li>${t(s)} — ${L === "ar" ? "بنسبة" : "rated"} ${s.level}%</li>`).join("") + `</ul></div>`;
+    }
+    if (matchedExp.length) {
+        html += `<div class="match-block"><h4><i class="fas fa-briefcase"></i> ${L === "ar" ? "الخبرات ذات الصلة" : "Relevant experience"}</h4><ul>` +
+            matchedExp.map(e => `<li><b>${t(e.role)}</b> ${L === "ar" ? "في" : "at"} ${e.org} (${t(e.period)}) — ${t(e.text)}</li>`).join("") + `</ul></div>`;
+    }
+    if (matchedProjects.length) {
+        html += `<div class="match-block"><h4><i class="fas fa-code-branch"></i> ${L === "ar" ? "المشاريع ذات الصلة" : "Relevant projects"}</h4><ul>` +
+            matchedProjects.map(p => `<li><b>${t(p.name)}</b> — ${t(p.text)}${p.link ? ` <a href="${p.link}" target="_blank">(${L === "ar" ? "عرض" : "view"})</a>` : ""}</li>`).join("") + `</ul></div>`;
+    }
+    if (gaps.length) {
+        html += `<div class="match-block gaps"><h4><i class="fas fa-triangle-exclamation"></i> ${L === "ar" ? "فجوات محتملة" : "Potential gaps"}</h4><ul>` +
+            gaps.map(g => `<li>${t(g)} — ${L === "ar" ? "غير موثّق حاليًا في السيرة الذاتية" : "not currently documented in the CV"}</li>`).join("") + `</ul></div>`;
+    }
+    if (!matchedSkills.length && !matchedExp.length && !matchedProjects.length) {
+        html += `<div class="match-block"><p style="color:var(--text2)">${L === "ar"
+            ? "لم يتم العثور على تطابق مباشر في الكلمات المفتاحية مع بيانات السيرة الذاتية الحالية. هذا لا يستبعد فارس — تواصل معه مباشرة واشرح الاحتياج، وسيؤكد مدى الملاءمة بنفسه."
+            : "No direct keyword overlap found with the current CV data. That doesn't rule Fares out — reach out directly and describe the need, and he can confirm fit himself."}</p></div>`;
+    }
+
+    html += `<div class="match-cta"><a href="mailto:${CV.contact.email}?subject=Project%20inquiry" class="btn-primary"><i class="fas fa-paper-plane"></i> ${L === "ar" ? "ناقش هذا مع فارس" : "Discuss this with Fares"}</a></div>`;
+
+    resultBox.innerHTML = html;
+    resultBox.classList.add("show");
+}
+
+document.getElementById("matchBtn").addEventListener("click", () => {
+    const text = document.getElementById("matchInput").value.toLowerCase().trim();
+    runMatchAnalysis(text, true);
+});
 </script>
 </body>
-</html>'''
-
+</html>
